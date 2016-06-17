@@ -2,7 +2,7 @@
 Performance test for viewing large models
 
 # Installation
-Use bower to restore packages 
+Use bower to restore packages
 if the packages don't restore properly maybe a libs directory needs to be added
 
 # Usage
