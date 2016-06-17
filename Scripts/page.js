@@ -147,7 +147,11 @@ function init() {
             var segment = segments[segmentIndex].SplineSegment;
             
             
-            for (let i = 0; i < segment.doublePoseTuple.length; i++) {
+            for (let i = 1; i < segment.doublePoseTuple.length; i++) {
+                var prevtuple = segment.doublePoseTuple[i-1];
+                var prevpose = prevtuple.pose.Elements;
+                geometry.vertices.push(new THREE.Vector3(prevpose[12], prevpose[13], prevpose[14]));
+
                 var tuple = segment.doublePoseTuple[i];
                 var pose = tuple.pose.Elements;
                 geometry.vertices.push(new THREE.Vector3(pose[12], pose[13], pose[14]));
@@ -214,7 +218,7 @@ function init() {
 
 
 
-    renderer = new THREE.WebGLRenderer({ antialias: true, precision: 'highp', preserveDrawingBuffer :false});
+    renderer = new THREE.WebGLRenderer({ antialias: false, precision: 'highp', preserveDrawingBuffer :false});
     renderer.setClearColor(0xffffff);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
