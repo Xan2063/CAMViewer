@@ -25,6 +25,7 @@ Thumbs.db
 *.sbr
 obj/
 .vs/
+libs/
 models/
 [Rr]elease*/
 _ReSharper*/
