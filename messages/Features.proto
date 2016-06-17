@@ -1,0 +1,126 @@
+﻿syntax = "proto3";
+
+import "mesh.proto";
+
+package tutorial;
+
+option java_package = "com.example.tutorial";
+option java_outer_classname = "AddressBookProtos";
+option csharp_namespace = "Trumpf.TruTops.CellTube.Persistency.Protobuf";
+
+message TsPoseSerializable{
+   repeated double Elements = 1 [packed=true];
+}
+
+
+
+
+message TcContourArcSegmentSerializable{
+	//int32 Id = 1;
+	//TsVectorSerializable StartTangent = 2;
+    //TsVectorSerializable StartNormal = 3;
+    //TsVectorSerializable EndTangent = 4;
+    //TsVectorSerializable EndNormal = 5;
+	TsVectorSerializable IpoCenterPoint = 2;
+    TsVectorSerializable IpoCenterNormal = 3;
+    double IpoRadius = 4; 
+	repeated TcDoublePoseTuple doublePoseTuple = 1;
+   
+   
+   
+}
+
+message TcContourLineSegmentSerializable{
+	
+	//int32 Id = 1;
+	//TsVectorSerializable StartTangent = 2;
+    //TsVectorSerializable StartNormal = 3;
+    //TsVectorSerializable EndTangent = 4;
+    //TsVectorSerializable EndNormal = 5;
+	repeated TcDoublePoseTuple doublePoseTuple = 1;
+}
+
+message TcContourSplineSegmentSerializable{
+	//int32 Id = 1;
+	//TsVectorSerializable StartTangent = 2;
+    //TsVectorSerializable StartNormal = 3;
+    //TsVectorSerializable EndTangent = 4;
+    //TsVectorSerializable EndNormal = 5;
+	repeated TcDoublePoseTuple doublePoseTuple = 1;
+}
+
+message TcDoublePoseTuple{
+	double param = 1;
+	TsPoseSerializable pose = 2;
+}
+
+
+
+message TcContourSerializable{
+   int32 Id = 1;   
+   repeated TcSegmentSerializable Segments = 2; 
+}
+
+message TcSegmentSerializable{
+	oneof segment{
+		TcContourArcSegmentSerializable ArcSegment = 1;
+		TcContourLineSegmentSerializable LineSegment = 2;
+		TcContourSplineSegmentSerializable SplineSegment = 3;
+}
+}
+
+message TcWorkpieceSerializable{
+   string WorkpieceType = 1;
+   string DocumentId = 2;
+   repeated int32 WorkpieceFeatures = 3 [packed=true];
+}
+
+message TcCircularHoleSerializable{
+   TsPoseSerializable CenterPoint = 1;
+   double Radius = 2;
+}
+
+message TcCuttingContourSerializable{
+   bool HasReversedSpin =1;
+   TcContourSerializable Contour = 2;
+}
+
+message TcRectangularHoleSerializable{
+   TsPoseSerializable CenterPoint = 1;
+   double CornerRadius = 2;
+   double Length = 3;
+   double Width = 4;
+
+}
+
+message TcElongatedHoleSerializable{
+   TsPoseSerializable CenterPoint = 1;
+   double Radius = 2;
+   double Length = 3;
+   double Width = 4;
+}
+
+message TcDoubleChamferSerializable{
+   bool HasReversedSpin =1;
+}
+
+message Feature{
+oneof feature{
+TcCircularHoleSerializable CircularHole =1;
+TcCuttingContourSerializable CuttingContour = 2;
+TcRectangularHoleSerializable RectangularHole =3;
+TcElongatedHoleSerializable ElongatedHole = 4;
+TcDoubleChamferSerializable DoubleChamfer = 5;
+}
+}
+
+message TcWorkpieceSerializationModel{
+   repeated Feature Features = 1;
+
+}
+
+
+
+
+
+

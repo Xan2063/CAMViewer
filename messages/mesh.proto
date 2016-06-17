@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+package tutorial;
+
+option java_package = "com.example.tutorial";
+option java_outer_classname = "AddressBookProtos";
+option csharp_namespace = "Trumpf.TruTops.CellTube.Persistency.Protobuf";
+
+message TsMeshSerializable{
+   repeated int32 Indices = 1 [packed=true];
+   repeated TsVectorSerializable Vertices = 2;
+}
+
+
+
+message TsVectorSerializable{
+	float X = 1;
+	float Y = 2;
+	float Z = 3;
+
+	
+}

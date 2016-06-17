@@ -1,0 +1,724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8824B14B-2976-4BB1-A8C4-7723640785C1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Examples.sln</RootNamespace>
+    <AssemblyName>Examples.sln</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\Detector.js" />
+    <Content Include="js\FirstPersonControls.js" />
+    <Content Include="js\OrbitControls.js" />
+    <Content Include="js\STLLoader.js" />
+    <Content Include="libs\bytebuffer\.gitignore" />
+    <Content Include="libs\bytebuffer\ByteBuffer.png" />
+    <Content Include="libs\bytebuffer\dist\ByteBufferAB.js" />
+    <Content Include="libs\bytebuffer\dist\ByteBufferAB.min.js" />
+    <Content Include="libs\bytebuffer\dist\ByteBufferNB.js" />
+    <Content Include="libs\bytebuffer\donate.png" />
+    <Content Include="libs\bytebuffer\externs\ByteBuffer.js" />
+    <Content Include="libs\bytebuffer\externs\minimal-env.js" />
+    <Content Include="libs\bytebuffer\index.js" />
+    <Content Include="libs\bytebuffer\scripts\build.js" />
+    <Content Include="libs\bytebuffer\src\ByteBuffer.js" />
+    <Content Include="libs\bytebuffer\src\ByteBufferAB.js" />
+    <Content Include="libs\bytebuffer\src\ByteBufferNB.js" />
+    <Content Include="libs\bytebuffer\src\ByteBufferTA.js" />
+    <Content Include="libs\bytebuffer\src\encodings\base64.js" />
+    <Content Include="libs\bytebuffer\src\encodings\binary.js" />
+    <Content Include="libs\bytebuffer\src\encodings\debug.js" />
+    <Content Include="libs\bytebuffer\src\encodings\hex.js" />
+    <Content Include="libs\bytebuffer\src\encodings\utf8.js" />
+    <Content Include="libs\bytebuffer\src\helpers.js" />
+    <Content Include="libs\bytebuffer\src\macros.js" />
+    <Content Include="libs\bytebuffer\src\methods\append.js" />
+    <Content Include="libs\bytebuffer\src\methods\assert.js" />
+    <Content Include="libs\bytebuffer\src\methods\capacity.js" />
+    <Content Include="libs\bytebuffer\src\methods\clear.js" />
+    <Content Include="libs\bytebuffer\src\methods\clone.js" />
+    <Content Include="libs\bytebuffer\src\methods\compact.js" />
+    <Content Include="libs\bytebuffer\src\methods\copy.js" />
+    <Content Include="libs\bytebuffer\src\methods\ensureCapacity.js" />
+    <Content Include="libs\bytebuffer\src\methods\fill.js" />
+    <Content Include="libs\bytebuffer\src\methods\flip.js" />
+    <Content Include="libs\bytebuffer\src\methods\mark.js" />
+    <Content Include="libs\bytebuffer\src\methods\order.js" />
+    <Content Include="libs\bytebuffer\src\methods\prepend.js" />
+    <Content Include="libs\bytebuffer\src\methods\printDebug.js" />
+    <Content Include="libs\bytebuffer\src\methods\remaining.js" />
+    <Content Include="libs\bytebuffer\src\methods\reset.js" />
+    <Content Include="libs\bytebuffer\src\methods\resize.js" />
+    <Content Include="libs\bytebuffer\src\methods\reverse.js" />
+    <Content Include="libs\bytebuffer\src\methods\skip.js" />
+    <Content Include="libs\bytebuffer\src\methods\slice.js" />
+    <Content Include="libs\bytebuffer\src\methods\static\allocate.js" />
+    <Content Include="libs\bytebuffer\src\methods\static\concat.js" />
+    <Content Include="libs\bytebuffer\src\methods\static\isByteBuffer.js" />
+    <Content Include="libs\bytebuffer\src\methods\static\type.js" />
+    <Content Include="libs\bytebuffer\src\methods\static\wrap.js" />
+    <Content Include="libs\bytebuffer\src\methods\toBuffer.js" />
+    <Content Include="libs\bytebuffer\src\methods\toString.js" />
+    <Content Include="libs\bytebuffer\src\types\floats\float32.js" />
+    <Content Include="libs\bytebuffer\src\types\floats\float64.js" />
+    <Content Include="libs\bytebuffer\src\types\floats\ieee754.js" />
+    <Content Include="libs\bytebuffer\src\types\ints\int16.js" />
+    <Content Include="libs\bytebuffer\src\types\ints\int32.js" />
+    <Content Include="libs\bytebuffer\src\types\ints\int64.js" />
+    <Content Include="libs\bytebuffer\src\types\ints\int8.js" />
+    <Content Include="libs\bytebuffer\src\types\strings\cstring.js" />
+    <Content Include="libs\bytebuffer\src\types\strings\istring.js" />
+    <Content Include="libs\bytebuffer\src\types\strings\utf8string.js" />
+    <Content Include="libs\bytebuffer\src\types\strings\vstring.js" />
+    <Content Include="libs\bytebuffer\src\types\varints\varint32.js" />
+    <Content Include="libs\bytebuffer\src\types\varints\varint64.js" />
+    <Content Include="libs\bytebuffer\tests\buffer_utfx.js" />
+    <Content Include="libs\bytebuffer\tests\suite.js" />
+    <Content Include="libs\jquery\AUTHORS.txt" />
+    <Content Include="libs\jquery\dist\jquery.js" />
+    <Content Include="libs\jquery\dist\jquery.min.js" />
+    <Content Include="libs\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="libs\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="libs\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="libs\jquery\LICENSE.txt" />
+    <Content Include="libs\jquery\src\ajax.js" />
+    <Content Include="libs\jquery\src\ajax\jsonp.js" />
+    <Content Include="libs\jquery\src\ajax\load.js" />
+    <Content Include="libs\jquery\src\ajax\parseJSON.js" />
+    <Content Include="libs\jquery\src\ajax\parseXML.js" />
+    <Content Include="libs\jquery\src\ajax\script.js" />
+    <Content Include="libs\jquery\src\ajax\var\location.js" />
+    <Content Include="libs\jquery\src\ajax\var\nonce.js" />
+    <Content Include="libs\jquery\src\ajax\var\rquery.js" />
+    <Content Include="libs\jquery\src\ajax\xhr.js" />
+    <Content Include="libs\jquery\src\attributes.js" />
+    <Content Include="libs\jquery\src\attributes\attr.js" />
+    <Content Include="libs\jquery\src\attributes\classes.js" />
+    <Content Include="libs\jquery\src\attributes\prop.js" />
+    <Content Include="libs\jquery\src\attributes\support.js" />
+    <Content Include="libs\jquery\src\attributes\val.js" />
+    <Content Include="libs\jquery\src\callbacks.js" />
+    <Content Include="libs\jquery\src\core.js" />
+    <Content Include="libs\jquery\src\core\access.js" />
+    <Content Include="libs\jquery\src\core\init.js" />
+    <Content Include="libs\jquery\src\core\parseHTML.js" />
+    <Content Include="libs\jquery\src\core\ready.js" />
+    <Content Include="libs\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="libs\jquery\src\css.js" />
+    <Content Include="libs\jquery\src\css\addGetHookIf.js" />
+    <Content Include="libs\jquery\src\css\adjustCSS.js" />
+    <Content Include="libs\jquery\src\css\curCSS.js" />
+    <Content Include="libs\jquery\src\css\defaultDisplay.js" />
+    <Content Include="libs\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="libs\jquery\src\css\showHide.js" />
+    <Content Include="libs\jquery\src\css\support.js" />
+    <Content Include="libs\jquery\src\css\var\cssExpand.js" />
+    <Content Include="libs\jquery\src\css\var\getStyles.js" />
+    <Content Include="libs\jquery\src\css\var\isHidden.js" />
+    <Content Include="libs\jquery\src\css\var\rmargin.js" />
+    <Content Include="libs\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="libs\jquery\src\css\var\swap.js" />
+    <Content Include="libs\jquery\src\data.js" />
+    <Content Include="libs\jquery\src\data\Data.js" />
+    <Content Include="libs\jquery\src\data\var\acceptData.js" />
+    <Content Include="libs\jquery\src\data\var\dataPriv.js" />
+    <Content Include="libs\jquery\src\data\var\dataUser.js" />
+    <Content Include="libs\jquery\src\deferred.js" />
+    <Content Include="libs\jquery\src\deprecated.js" />
+    <Content Include="libs\jquery\src\dimensions.js" />
+    <Content Include="libs\jquery\src\effects.js" />
+    <Content Include="libs\jquery\src\effects\animatedSelector.js" />
+    <Content Include="libs\jquery\src\effects\Tween.js" />
+    <Content Include="libs\jquery\src\event.js" />
+    <Content Include="libs\jquery\src\event\ajax.js" />
+    <Content Include="libs\jquery\src\event\alias.js" />
+    <Content Include="libs\jquery\src\event\focusin.js" />
+    <Content Include="libs\jquery\src\event\support.js" />
+    <Content Include="libs\jquery\src\event\trigger.js" />
+    <Content Include="libs\jquery\src\exports\amd.js" />
+    <Content Include="libs\jquery\src\exports\global.js" />
+    <Content Include="libs\jquery\src\intro.js" />
+    <Content Include="libs\jquery\src\jquery.js" />
+    <Content Include="libs\jquery\src\manipulation.js" />
+    <Content Include="libs\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="libs\jquery\src\manipulation\getAll.js" />
+    <Content Include="libs\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="libs\jquery\src\manipulation\support.js" />
+    <Content Include="libs\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="libs\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="libs\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="libs\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="libs\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="libs\jquery\src\offset.js" />
+    <Content Include="libs\jquery\src\outro.js" />
+    <Content Include="libs\jquery\src\queue.js" />
+    <Content Include="libs\jquery\src\queue\delay.js" />
+    <Content Include="libs\jquery\src\selector-native.js" />
+    <Content Include="libs\jquery\src\selector-sizzle.js" />
+    <Content Include="libs\jquery\src\selector.js" />
+    <Content Include="libs\jquery\src\serialize.js" />
+    <Content Include="libs\jquery\src\traversing.js" />
+    <Content Include="libs\jquery\src\traversing\findFilter.js" />
+    <Content Include="libs\jquery\src\traversing\var\dir.js" />
+    <Content Include="libs\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="libs\jquery\src\traversing\var\siblings.js" />
+    <Content Include="libs\jquery\src\var\arr.js" />
+    <Content Include="libs\jquery\src\var\class2type.js" />
+    <Content Include="libs\jquery\src\var\concat.js" />
+    <Content Include="libs\jquery\src\var\document.js" />
+    <Content Include="libs\jquery\src\var\documentElement.js" />
+    <Content Include="libs\jquery\src\var\hasOwn.js" />
+    <Content Include="libs\jquery\src\var\indexOf.js" />
+    <Content Include="libs\jquery\src\var\pnum.js" />
+    <Content Include="libs\jquery\src\var\push.js" />
+    <Content Include="libs\jquery\src\var\rcssNum.js" />
+    <Content Include="libs\jquery\src\var\rnotwhite.js" />
+    <Content Include="libs\jquery\src\var\slice.js" />
+    <Content Include="libs\jquery\src\var\support.js" />
+    <Content Include="libs\jquery\src\var\toString.js" />
+    <Content Include="libs\jquery\src\wrap.js" />
+    <Content Include="libs\long\.gitignore" />
+    <Content Include="libs\long\dist\long.js" />
+    <Content Include="libs\long\dist\long.min.js" />
+    <Content Include="libs\long\donate.png" />
+    <Content Include="libs\long\externs\long.js" />
+    <Content Include="libs\long\index.js" />
+    <Content Include="libs\long\long.png" />
+    <Content Include="libs\long\scripts\build.js" />
+    <Content Include="libs\long\src\long.js" />
+    <Content Include="libs\long\src\wrap.js" />
+    <Content Include="libs\long\tests\goog.math.long.js" />
+    <Content Include="libs\long\tests\suite.js" />
+    <Content Include="libs\protobuf\cli\pbjs.js" />
+    <Content Include="libs\protobuf\cli\pbjs\sources\binary.js" />
+    <Content Include="libs\protobuf\cli\pbjs\sources\json.js" />
+    <Content Include="libs\protobuf\cli\pbjs\sources\proto.js" />
+    <Content Include="libs\protobuf\cli\pbjs\targets\amd.js" />
+    <Content Include="libs\protobuf\cli\pbjs\targets\commonjs.js" />
+    <Content Include="libs\protobuf\cli\pbjs\targets\js.js" />
+    <Content Include="libs\protobuf\cli\pbjs\targets\json.js" />
+    <Content Include="libs\protobuf\cli\pbjs\targets\proto.js" />
+    <Content Include="libs\protobuf\cli\pbjs\util.js" />
+    <Content Include="libs\protobuf\dist\protobuf-light.js" />
+    <Content Include="libs\protobuf\dist\protobuf-light.min.js" />
+    <Content Include="libs\protobuf\dist\protobuf.js" />
+    <Content Include="libs\protobuf\dist\protobuf.min.js" />
+    <Content Include="libs\protobuf\docs\index.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Builder.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Builder.Message.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Builder.Service.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.DotProto.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.DotProto.Parser.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.DotProto.Tokenizer.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Element.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.js.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Map.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Element.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Enum.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Enum.Value.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Extension.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Message.ExtensionField.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Message.Field.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Message.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Message.OneOf.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Namespace.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Service.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Service.Method.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.Service.RPCMethod.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Reflect.T.html" />
+    <Content Include="libs\protobuf\docs\ProtoBuf.Util.html" />
+    <Content Include="libs\protobuf\docs\scripts\linenumber.js" />
+    <Content Include="libs\protobuf\docs\scripts\prettify\Apache-License-2.0.txt" />
+    <Content Include="libs\protobuf\docs\scripts\prettify\lang-css.js" />
+    <Content Include="libs\protobuf\docs\scripts\prettify\prettify.js" />
+    <Content Include="libs\protobuf\docs\styles\jsdoc-default.css" />
+    <Content Include="libs\protobuf\docs\styles\prettify-jsdoc.css" />
+    <Content Include="libs\protobuf\docs\styles\prettify-tomorrow.css" />
+    <Content Include="libs\protobuf\donate.png" />
+    <Content Include="libs\protobuf\examples\protoify\index.js" />
+    <Content Include="libs\protobuf\examples\protoify\json.js" />
+    <Content Include="libs\protobuf\examples\protoify\test.js" />
+    <Content Include="libs\protobuf\examples\websocket\server.js" />
+    <Content Include="libs\protobuf\examples\websocket\www\index.html" />
+    <Content Include="libs\protobuf\externs\fs.js" />
+    <Content Include="libs\protobuf\externs\protobuf.js" />
+    <Content Include="libs\protobuf\index.js" />
+    <Content Include="libs\protobuf\protobuf.png" />
+    <Content Include="libs\protobuf\scripts\build.js" />
+    <Content Include="libs\protobuf\src\es5.js" />
+    <Content Include="libs\protobuf\src\protobuf.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Builder.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Builder\Enum.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Builder\Message.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Builder\Service.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\DotProto.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\DotProto\Parser.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\DotProto\Tokenizer.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Lang.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Map.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Element.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Enum.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Enum\Value.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Extension.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Message.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Message\ExtensionField.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Message\Field.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Message\OneOf.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Namespace.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Service.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Service\Method.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\Service\RPCMethod.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Reflect\T.js" />
+    <Content Include="libs\protobuf\src\ProtoBuf\Util.js" />
+    <Content Include="libs\protobuf\src\wrap.js" />
+    <Content Include="libs\stats.js\build\stats.min.js" />
+    <Content Include="libs\stats.js\files\custom.png" />
+    <Content Include="libs\stats.js\files\fps.png" />
+    <Content Include="libs\stats.js\files\mb.png" />
+    <Content Include="libs\stats.js\files\ms.png" />
+    <Content Include="libs\three.js\build\three.js" />
+    <Content Include="libs\three.js\build\three.min.js" />
+    <Content Include="libs\three.js\examples\js\AnimationClipCreator.js" />
+    <Content Include="libs\three.js\examples\js\animation\CCDIKSolver.js" />
+    <Content Include="libs\three.js\examples\js\animation\MMDPhysics.js" />
+    <Content Include="libs\three.js\examples\js\BlendCharacter.js" />
+    <Content Include="libs\three.js\examples\js\BlendCharacterGui.js" />
+    <Content Include="libs\three.js\examples\js\BufferGeometryUtils.js" />
+    <Content Include="libs\three.js\examples\js\cameras\CinematicCamera.js" />
+    <Content Include="libs\three.js\examples\js\cameras\CombinedCamera.js" />
+    <Content Include="libs\three.js\examples\js\Car.js" />
+    <Content Include="libs\three.js\examples\js\Cloth.js" />
+    <Content Include="libs\three.js\examples\js\controls\DeviceOrientationControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\DragControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\EditorControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\FirstPersonControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\FlyControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\MouseControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\OrbitControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\OrthographicTrackballControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\PointerLockControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\TrackballControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\TransformControls.js" />
+    <Content Include="libs\three.js\examples\js\controls\VRControls.js" />
+    <Content Include="libs\three.js\examples\js\crossfade\gui.js" />
+    <Content Include="libs\three.js\examples\js\crossfade\scenes.js" />
+    <Content Include="libs\three.js\examples\js\crossfade\transition.js" />
+    <Content Include="libs\three.js\examples\js\CurveExtras.js" />
+    <Content Include="libs\three.js\examples\js\curves\NURBSCurve.js" />
+    <Content Include="libs\three.js\examples\js\curves\NURBSSurface.js" />
+    <Content Include="libs\three.js\examples\js\curves\NURBSUtils.js" />
+    <Content Include="libs\three.js\examples\js\Detector.js" />
+    <Content Include="libs\three.js\examples\js\effects\AnaglyphEffect.js" />
+    <Content Include="libs\three.js\examples\js\effects\AsciiEffect.js" />
+    <Content Include="libs\three.js\examples\js\effects\ParallaxBarrierEffect.js" />
+    <Content Include="libs\three.js\examples\js\effects\PeppersGhostEffect.js" />
+    <Content Include="libs\three.js\examples\js\effects\StereoEffect.js" />
+    <Content Include="libs\three.js\examples\js\effects\VREffect.js" />
+    <Content Include="libs\three.js\examples\js\Encodings.js" />
+    <Content Include="libs\three.js\examples\js\exporters\OBJExporter.js" />
+    <Content Include="libs\three.js\examples\js\exporters\STLBinaryExporter.js" />
+    <Content Include="libs\three.js\examples\js\exporters\STLExporter.js" />
+    <Content Include="libs\three.js\examples\js\exporters\TypedGeometryExporter.js" />
+    <Content Include="libs\three.js\examples\js\geometries\ConvexGeometry.js" />
+    <Content Include="libs\three.js\examples\js\geometries\DecalGeometry.js" />
+    <Content Include="libs\three.js\examples\js\geometries\hilbert2D.js" />
+    <Content Include="libs\three.js\examples\js\geometries\hilbert3D.js" />
+    <Content Include="libs\three.js\examples\js\geometries\TeapotBufferGeometry.js" />
+    <Content Include="libs\three.js\examples\js\GPUParticleSystem.js" />
+    <Content Include="libs\three.js\examples\js\Gyroscope.js" />
+    <Content Include="libs\three.js\examples\js\Half.js" />
+    <Content Include="libs\three.js\examples\js\ImprovedNoise.js" />
+    <Content Include="libs\three.js\examples\js\libs\ammo.js" />
+    <Content Include="libs\three.js\examples\js\libs\charsetencoder.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\dat.gui.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\earcut.js" />
+    <Content Include="libs\three.js\examples\js\libs\inflate.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\jszip.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\msgpack-js.js" />
+    <Content Include="libs\three.js\examples\js\libs\pnltri.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\stats.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\system.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\timeliner_gui.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\tween.min.js" />
+    <Content Include="libs\three.js\examples\js\libs\zlib_and_gzip.min.js" />
+    <Content Include="libs\three.js\examples\js\loaders\3MFLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\AMFLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\AssimpJSONLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\AWDLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\BabylonLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\BinaryLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\ColladaLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\ColladaLoader2.js" />
+    <Content Include="libs\three.js\examples\js\loaders\collada\Animation.js" />
+    <Content Include="libs\three.js\examples\js\loaders\collada\AnimationHandler.js" />
+    <Content Include="libs\three.js\examples\js\loaders\collada\KeyFrameAnimation.js" />
+    <Content Include="libs\three.js\examples\js\loaders\ctm\ctm.js" />
+    <Content Include="libs\three.js\examples\js\loaders\ctm\CTMLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\ctm\CTMWorker.js" />
+    <Content Include="libs\three.js\examples\js\loaders\ctm\license\js-lzma.txt" />
+    <Content Include="libs\three.js\examples\js\loaders\ctm\license\js-openctm.txt" />
+    <Content Include="libs\three.js\examples\js\loaders\ctm\license\OpenCTM.txt" />
+    <Content Include="libs\three.js\examples\js\loaders\ctm\lzma.js" />
+    <Content Include="libs\three.js\examples\js\loaders\DDSLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\deprecated\SceneLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\FBXLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\gltf\glTF-parser.js" />
+    <Content Include="libs\three.js\examples\js\loaders\gltf\glTFAnimation.js" />
+    <Content Include="libs\three.js\examples\js\loaders\gltf\glTFLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\gltf\glTFLoaderUtils.js" />
+    <Content Include="libs\three.js\examples\js\loaders\gltf\glTFShaders.js" />
+    <Content Include="libs\three.js\examples\js\loaders\gltf\gltfUtilities.js" />
+    <Content Include="libs\three.js\examples\js\loaders\HDRCubeTextureLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\KMZLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\MD2Loader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\MMDLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\MTLLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\NRRDLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\OBJLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\PCDLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\PDBLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\PlayCanvasLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\PLYLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\PVRLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\RGBELoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\sea3d\SEA3D.js" />
+    <Content Include="libs\three.js\examples\js\loaders\sea3d\SEA3DDeflate.js" />
+    <Content Include="libs\three.js\examples\js\loaders\sea3d\SEA3DLegacy.js" />
+    <Content Include="libs\three.js\examples\js\loaders\sea3d\SEA3DLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\sea3d\SEA3DLZMA.js" />
+    <Content Include="libs\three.js\examples\js\loaders\STLLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\SVGLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\TGALoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\UTF8Loader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\VRMLLoader.js" />
+    <Content Include="libs\three.js\examples\js\loaders\VTKLoader.js" />
+    <Content Include="libs\three.js\examples\js\MarchingCubes.js" />
+    <Content Include="libs\three.js\examples\js\math\ColorConverter.js" />
+    <Content Include="libs\three.js\examples\js\math\Lut.js" />
+    <Content Include="libs\three.js\examples\js\MD2Character.js" />
+    <Content Include="libs\three.js\examples\js\MD2CharacterComplex.js" />
+    <Content Include="libs\three.js\examples\js\Mirror.js" />
+    <Content Include="libs\three.js\examples\js\modifiers\BufferSubdivisionModifier.js" />
+    <Content Include="libs\three.js\examples\js\modifiers\ExplodeModifier.js" />
+    <Content Include="libs\three.js\examples\js\modifiers\SubdivisionModifier.js" />
+    <Content Include="libs\three.js\examples\js\modifiers\TessellateModifier.js" />
+    <Content Include="libs\three.js\examples\js\MorphAnimation.js" />
+    <Content Include="libs\three.js\examples\js\MorphAnimMesh.js" />
+    <Content Include="libs\three.js\examples\js\nodes\accessors\CameraNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\accessors\ColorsNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\accessors\LightNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\accessors\NormalNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\accessors\PositionNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\accessors\ReflectNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\accessors\ScreenUVNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\accessors\UVNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\BuilderNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\ConstNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\FunctionCallNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\FunctionNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\GLNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\InputNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\ColorNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\CubeTextureNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\FloatNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\IntNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\Matrix4Node.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\MirrorNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\ScreenNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\TextureNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\Vector2Node.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\Vector3Node.js" />
+    <Content Include="libs\three.js\examples\js\nodes\inputs\Vector4Node.js" />
+    <Content Include="libs\three.js\examples\js\nodes\materials\PhongNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\materials\PhongNodeMaterial.js" />
+    <Content Include="libs\three.js\examples\js\nodes\materials\StandardNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\materials\StandardNodeMaterial.js" />
+    <Content Include="libs\three.js\examples\js\nodes\math\Math1Node.js" />
+    <Content Include="libs\three.js\examples\js\nodes\math\Math2Node.js" />
+    <Content Include="libs\three.js\examples\js\nodes\math\Math3Node.js" />
+    <Content Include="libs\three.js\examples\js\nodes\math\OperatorNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\NodeLib.js" />
+    <Content Include="libs\three.js\examples\js\nodes\NodeMaterial.js" />
+    <Content Include="libs\three.js\examples\js\nodes\postprocessing\NodePass.js" />
+    <Content Include="libs\three.js\examples\js\nodes\RawNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\TempNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\ColorAdjustmentNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\JoinNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\LuminanceNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\NoiseNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\NormalMapNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\ResolutionNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\RoughnessToBlinnExponentNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\SwitchNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\TimerNode.js" />
+    <Content Include="libs\three.js\examples\js\nodes\utils\VelocityNode.js" />
+    <Content Include="libs\three.js\examples\js\objects\ShadowMesh.js" />
+    <Content Include="libs\three.js\examples\js\Ocean.js" />
+    <Content Include="libs\three.js\examples\js\Octree.js" />
+    <Content Include="libs\three.js\examples\js\ParametricGeometries.js" />
+    <Content Include="libs\three.js\examples\js\pmrem\PMREMCubeUVPacker.js" />
+    <Content Include="libs\three.js\examples\js\pmrem\PMREMGenerator.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\AdaptiveToneMappingPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\BloomPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\BokehPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\ClearPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\DotScreenPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\EffectComposer.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\FilmPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\GlitchPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\ManualMSAARenderPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\MaskPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\RenderPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\SavePass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\ShaderPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\SMAAPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\TAARenderPass.js" />
+    <Content Include="libs\three.js\examples\js\postprocessing\TexturePass.js" />
+    <Content Include="libs\three.js\examples\js\PRNG.js" />
+    <Content Include="libs\three.js\examples\js\renderers\CanvasRenderer.js" />
+    <Content Include="libs\three.js\examples\js\renderers\CSS2DRenderer.js" />
+    <Content Include="libs\three.js\examples\js\renderers\CSS3DRenderer.js" />
+    <Content Include="libs\three.js\examples\js\renderers\Projector.js" />
+    <Content Include="libs\three.js\examples\js\renderers\RaytracingRenderer.js" />
+    <Content Include="libs\three.js\examples\js\renderers\RaytracingWorker.js" />
+    <Content Include="libs\three.js\examples\js\renderers\SoftwareRenderer.js" />
+    <Content Include="libs\three.js\examples\js\renderers\SVGRenderer.js" />
+    <Content Include="libs\three.js\examples\js\RollerCoaster.js" />
+    <Content Include="libs\three.js\examples\js\ShaderGodRays.js" />
+    <Content Include="libs\three.js\examples\js\ShaderSkin.js" />
+    <Content Include="libs\three.js\examples\js\shaders\BasicShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\BleachBypassShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\BlendShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\BokehShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\BokehShader2.js" />
+    <Content Include="libs\three.js\examples\js\shaders\BrightnessContrastShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\ColorCorrectionShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\ColorifyShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\ConvolutionShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\CopyShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\DigitalGlitch.js" />
+    <Content Include="libs\three.js\examples\js\shaders\DOFMipMapShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\DotScreenShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\EdgeShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\EdgeShader2.js" />
+    <Content Include="libs\three.js\examples\js\shaders\FilmShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\FocusShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\FresnelShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\FXAAShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\GammaCorrectionShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\HorizontalBlurShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\HorizontalTiltShiftShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\HueSaturationShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\KaleidoShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\LuminosityShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\MirrorShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\NormalMapShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\OceanShaders.js" />
+    <Content Include="libs\three.js\examples\js\shaders\ParallaxShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\RGBShiftShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\SepiaShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\SMAAShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\SSAOShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\TechnicolorShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\ToneMapShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\TriangleBlurShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\UnpackDepthRGBAShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\VerticalBlurShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\VerticalTiltShiftShader.js" />
+    <Content Include="libs\three.js\examples\js\shaders\VignetteShader.js" />
+    <Content Include="libs\three.js\examples\js\ShaderTerrain.js" />
+    <Content Include="libs\three.js\examples\js\ShaderToon.js" />
+    <Content Include="libs\three.js\examples\js\SimplexNoise.js" />
+    <Content Include="libs\three.js\examples\js\SimulationRenderer.js" />
+    <Content Include="libs\three.js\examples\js\SkyShader.js" />
+    <Content Include="libs\three.js\examples\js\TimelinerController.js" />
+    <Content Include="libs\three.js\examples\js\TypedArrayUtils.js" />
+    <Content Include="libs\three.js\examples\js\UCSCharacter.js" />
+    <Content Include="libs\three.js\examples\js\utils\GeometryUtils.js" />
+    <Content Include="libs\three.js\examples\js\utils\ImageUtils.js" />
+    <Content Include="libs\three.js\examples\js\utils\ShadowMapViewer.js" />
+    <Content Include="libs\three.js\examples\js\utils\UVsDebug.js" />
+    <Content Include="libs\three.js\examples\js\Volume.js" />
+    <Content Include="libs\three.js\examples\js\VolumeSlice.js" />
+    <Content Include="libs\three.js\examples\js\WaterShader.js" />
+    <Content Include="libs\three.js\examples\js\WebVR.js" />
+    <Content Include="messages\protoc.exe" />
+    <Content Include="Scripts\page.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="webgl_loader_stl.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="models\Large.stl" />
+    <Content Include="models\JH23-01-001_01002_Waschkorb-D81-l20_lange-Loecher.stl" />
+    <Content Include="models\JH23-01-001_01002_Waschkorb-D81-l20_lange-Loecher_fein.stl" />
+    <Content Include="models\Roth_VieleLoecher_GP102846.stl" />
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
+    <Content Include="messages\Features.proto" />
+    <Content Include="messages\mesh.proto" />
+    <Content Include="libs\bytebuffer\.bower.json" />
+    <Content Include="libs\bytebuffer\.npmignore" />
+    <Content Include="libs\bytebuffer\.travis.yml" />
+    <Content Include="libs\bytebuffer\bower.json" />
+    <Content Include="libs\bytebuffer\dist\ByteBufferAB.min.js.gz" />
+    <Content Include="libs\bytebuffer\dist\ByteBufferAB.min.map" />
+    <Content Include="libs\bytebuffer\dist\README.md" />
+    <Content Include="libs\bytebuffer\jsdoc.json" />
+    <Content Include="libs\bytebuffer\LICENSE" />
+    <Content Include="libs\bytebuffer\package.json" />
+    <Content Include="libs\bytebuffer\README.md" />
+    <Content Include="libs\bytebuffer\src\bower.json" />
+    <Content Include="libs\jquery\.bower.json" />
+    <Content Include="libs\jquery\bower.json" />
+    <Content Include="libs\jquery\dist\jquery.min.map" />
+    <Content Include="libs\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="libs\jquery\README.md" />
+    <Content Include="libs\jquery\src\.jshintrc" />
+    <Content Include="libs\long\.bower.json" />
+    <Content Include="libs\long\.travis.yml" />
+    <Content Include="libs\long\bower.json" />
+    <Content Include="libs\long\dist\long.min.js.gz" />
+    <Content Include="libs\long\dist\long.min.map" />
+    <Content Include="libs\long\dist\README.md" />
+    <Content Include="libs\long\doco\INDEX.md" />
+    <Content Include="libs\long\doco\Long.md" />
+    <Content Include="libs\long\jsdoc.json" />
+    <Content Include="libs\long\LICENSE" />
+    <Content Include="libs\long\package.json" />
+    <Content Include="libs\long\README.md" />
+    <Content Include="libs\long\src\bower.json" />
+    <Content Include="libs\protobuf\.bower.json" />
+    <Content Include="libs\protobuf\bin\pbjs" />
+    <Content Include="libs\protobuf\bower.json" />
+    <Content Include="libs\protobuf\dist\protobuf-light.min.js.gz" />
+    <Content Include="libs\protobuf\dist\protobuf-light.min.map" />
+    <Content Include="libs\protobuf\dist\protobuf.min.js.gz" />
+    <Content Include="libs\protobuf\dist\protobuf.min.map" />
+    <Content Include="libs\protobuf\dist\README.md" />
+    <Content Include="libs\protobuf\examples\protoify\json.json" />
+    <Content Include="libs\protobuf\examples\protoify\json.proto" />
+    <Content Include="libs\protobuf\examples\protoify\package.json" />
+    <Content Include="libs\protobuf\examples\protoify\README.md" />
+    <Content Include="libs\protobuf\examples\websocket\package.json" />
+    <Content Include="libs\protobuf\examples\websocket\README.md" />
+    <Content Include="libs\protobuf\examples\websocket\www\example.proto" />
+    <Content Include="libs\protobuf\jsdoc.json" />
+    <Content Include="libs\protobuf\LICENSE" />
+    <Content Include="libs\protobuf\package.json" />
+    <Content Include="libs\protobuf\README.md" />
+    <Content Include="libs\protobuf\src\bower.json" />
+    <Content Include="libs\protobuf\src\google\protobuf\descriptor.json" />
+    <Content Include="libs\protobuf\src\google\protobuf\descriptor.proto" />
+    <Content Include="libs\protobuf\src\google\protobuf\README.md" />
+    <Content Include="libs\stats.js\.bower.json" />
+    <Content Include="libs\stats.js\bower.json" />
+    <Content Include="libs\stats.js\package.json" />
+    <Content Include="libs\stats.js\README.md" />
+    <Content Include="libs\three.js\.bower.json" />
+    <Content Include="libs\three.js\bower.json" />
+    <Content Include="libs\three.js\examples\js\libs\zlib_and_gzip.min.js.map" />
+    <Content Include="libs\three.js\package.json" />
+    <None Include="models\slotted_disk.json" />
+    <Content Include="models\slotted_disk.stl" />
+    <Content Include="models\SmallSize__Plattform.stl" />
+    <Content Include="models\test.stl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52240</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52240/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
