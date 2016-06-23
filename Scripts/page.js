@@ -80,7 +80,8 @@ function init() {
 
 
     // get features from service
-    $.get("http://localhost:8080/workpieceService/Features", function (data) {
+    $.get("http://localhost:8080/sampleFiles/Features_plattform.xml", function (data) {
+    //$.get("http://localhost:8080/workpieceService/Features", function (data) {
 
         var base64string = data.firstChild.textContent;
         var yourMessage = builder.build("tutorial.TcWorkpieceSerializationModel");
@@ -155,6 +156,15 @@ function init() {
                 var tuple = segment.doublePoseTuple[i];
                 var pose = tuple.pose.Elements;
                 geometry.vertices.push(new THREE.Vector3(pose[12], pose[13], pose[14]));
+
+                var origin = new THREE.Vector3(pose[12], pose[13], pose[14])
+                geometry.vertices.push(new THREE.Vector3(pose[12], pose[13], pose[14]));
+
+                var vectordir = new THREE.Vector3(pose[8], pose[9], pose[10]);
+                var normelizedvec= vectordir.normalize().multiplyScalar(2);
+                var resultvec = origin.add(normelizedvec);
+                geometry.vertices.push(resultvec);
+
             }
         }
         return geometry;
@@ -168,7 +178,8 @@ function init() {
 
    
     // get mesh from service
-    $.get("http://localhost:8080/workpieceService/MeshBin", function (data) {
+    $.get("http://localhost:8080/sampleFiles/MeshBin_plattform.xml", function (data) {
+    //$.get("http://localhost:8080/workpieceService/MeshBin", function (data) {
 
         var base64string = data.firstChild.textContent;
         var yourMessage = builder.build("tutorial.TsMeshSerializable");
