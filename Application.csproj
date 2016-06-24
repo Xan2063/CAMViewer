@@ -60,6 +60,7 @@
   <ItemGroup>
     <Content Include="js\Detector.js" />
     <Content Include="js\FirstPersonControls.js" />
+    <Content Include="js\jquery.ba-throttle-debounce.js" />
     <Content Include="js\OrbitControls.js" />
     <Content Include="js\STLLoader.js" />
     <Content Include="libs\bytebuffer\.gitignore" />
