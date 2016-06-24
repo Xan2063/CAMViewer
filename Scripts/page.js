@@ -322,37 +322,70 @@ function animate() {
 
 }
 
+var collisionline;
+var originalColor;
+var currentIndex;
 function checkCollisions() {
     raycaster.setFromCamera(mouse, camera);
-    var intersects = raycaster.intersectObject(featureGraphics, true);
+    var intersects = raycaster.intersectObject(scene, true);
     if (intersects.length > 0) {
         if (currentIntersected !== undefined) {
-            currentIntersected.material.linewidth = 1;
+
+            let previousType = currentIntersected.type;
+            if (previousType === 'Mesh') {
+                if (currentIntersected === intersects[0].object) return;
+                currentIntersected.material.color = originalColor;
+            }
+           
+            
+            if (previousType === 'LineSegments') {
+
+                scene.remove(collisionline);
+                collisionline = null;
+            }
         }
 
+        
 
         currentIntersected = intersects[0].object;
-        var test = typeof (currentIntersected);
-        var index = intersects[0].index;
-        var line = new THREE.Geometry();
-        //line.vertices.push(currentIntersected.geometry.vertices[index]);
-        //line.vertices.push(currentIntersected.geometry.vertices[index - 1]);
-        line.vertices.push(currentIntersected.geometry.vertices[index]);
-        line.vertices.push(currentIntersected.geometry.vertices[index + 1]);
+        
+        var type = currentIntersected.type;
 
-        var collisionline = new THREE.LineSegments(line, new THREE.MeshBasicMaterial({ color: 0x00FF00, wireframeLinewidth: 5 }));
-        collisionline.lineWidth = 15;
-        scene.add(collisionline);
-        //currentIntersected.material.linewidth = 15;
-        currentIntersected.material.color = new THREE.Color(0, 0, 0);
+        if (type === 'Mesh') {
+            originalColor = currentIntersected.material.color;
+            currentIntersected.material.color = new THREE.Color(0, 0xFF, 0);
+        }
+        if (type === 'LineSegments') {
+            currentIndex = intersects[0].index;
+            var line = new THREE.Geometry();
+            //line.vertices.push(currentIntersected.geometry.vertices[index]);
+            //line.vertices.push(currentIntersected.geometry.vertices[index - 1]);
+            line.vertices.push(currentIntersected.geometry.vertices[currentIndex]);
+            line.vertices.push(currentIntersected.geometry.vertices[currentIndex + 1]);
+
+            collisionline = new THREE.LineSegments(line, new THREE.MeshBasicMaterial({ color: 0x00FF00, wireframeLinewidth: 5 }));
+            collisionline.lineWidth = 15;
+            scene.add(collisionline);
+            //currentIntersected.material.linewidth = 15;
+            currentIntersected.material.color = new THREE.Color(0, 0, 0);
+        }
+        
         //sphereInter.visible = true;
         //sphereInter.position.copy(intersects[0].point);
     } else {
         if (currentIntersected !== undefined) {
-            currentIntersected.material.color = new THREE.Color(0, 0, 0);
+            let previousType = currentIntersected.type;
+            if (previousType === 'Mesh') {
+                currentIntersected.material.color = originalColor;
+            }
+            //currentIntersected.material.color = new THREE.Color(0, 0, 0);
             //currentIntersected.material.linewidth = 1;
+            if (collisionline !== null) {
+                scene.remove(collisionline);
+            }
         }
         currentIntersected = undefined;
+        
         //sphereInter.visible = false;
     }
 }
