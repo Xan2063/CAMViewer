@@ -28,6 +28,11 @@ var container, stats;
 
 var camera, cameraTarget, scene, renderer, controls, clock;
 
+var mouse = new THREE.Vector2();
+var currentIntersected, raycaster, sphereInter;
+
+var featureGraphics;
+
 init();
 animate();
 
@@ -35,6 +40,7 @@ function init() {
 
     container = document.createElement('div');
     document.body.appendChild(container);
+    
 
     camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 10000);
 
@@ -62,17 +68,18 @@ function init() {
 
 
 
-    // Ground
+    // Collisions
+    raycaster = new THREE.Raycaster();
+    raycaster.linePrecision = 3;
+    document.addEventListener('mousemove', onDocumentMouseMove, false);
 
-    //var plane = new THREE.Mesh(
-    //	new THREE.PlaneBufferGeometry( 40, 40 ),
-    //	new THREE.MeshPhongMaterial( { color: 0x999999, specular: 0x101010 } )
-    //);
-    //plane.rotation.x = -Math.PI/2;
-    //plane.position.y = -0.5;
-    //scene.add( plane );
+    var geometry = new THREE.SphereGeometry(5);
+    var material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    sphereInter = new THREE.Mesh(geometry, material);
+    sphereInter.visible = false;
+    scene.add(sphereInter);
 
-    //plane.receiveShadow = true;
+    
 
 
 
@@ -80,7 +87,8 @@ function init() {
 
 
     // get features from service
-    $.get("http://localhost:8080/sampleFiles/Features_plattform.xml", function (data) {
+    $.get("http://localhost:8080/sampleFiles/Features.xml", function (data) {
+    //$.get("http://localhost:8080/sampleFiles/Features_Waschkorb.xml", function (data) {
     //$.get("http://localhost:8080/workpieceService/Features", function (data) {
 
         var base64string = data.firstChild.textContent;
@@ -109,7 +117,7 @@ function init() {
             }
             
         }
-        var featureGraphics = new THREE.LineSegments(allFeatures, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+        featureGraphics = new THREE.LineSegments(allFeatures, new THREE.MeshBasicMaterial({ color: 0x000000 }));
         scene.add(featureGraphics);
 
     });
@@ -178,9 +186,10 @@ function init() {
 
    
     // get mesh from service
-    $.get("http://localhost:8080/sampleFiles/MeshBin_plattform.xml", function (data) {
+    $.get("http://localhost:8080/sampleFiles/MeshBin.xml", function (data) {
+    //$.get("http://localhost:8080/sampleFiles/MeshBin_Waschkorb.xml", function (data) {
     //$.get("http://localhost:8080/workpieceService/MeshBin", function (data) {
-
+        console.log(data);
         var base64string = data.firstChild.textContent;
         var yourMessage = builder.build("tutorial.TsMeshSerializable");
         var serializedMesh = yourMessage.decode64(base64string);
@@ -255,6 +264,12 @@ function init() {
 
 }
 
+function onDocumentMouseMove(event) {
+    event.preventDefault();
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+}
+
 function addShadowedLight(x, y, z, color, intensity) {
 
     var directionalLight = new THREE.DirectionalLight(color, intensity);
@@ -304,6 +319,39 @@ function animate() {
 function render() {
 
     var timer = Date.now() * 0.0005;
+
+
+    raycaster.setFromCamera(mouse, camera);
+    var intersects = raycaster.intersectObject(featureGraphics, true);
+    if (intersects.length > 0) {
+        if (currentIntersected !== undefined) {
+            currentIntersected.material.linewidth = 1;
+        }
+
+        
+        currentIntersected = intersects[0].object;
+        var index = intersects[0].index;
+        var line = new THREE.Geometry();
+        line.vertices.push(currentIntersected.geometry.vertices[index]);
+        line.vertices.push(currentIntersected.geometry.vertices[index - 1]);
+        line.vertices.push(currentIntersected.geometry.vertices[index]);
+        line.vertices.push(currentIntersected.geometry.vertices[index + 1]);
+
+        var collisionline = new THREE.LineSegments(line, new THREE.MeshBasicMaterial({ color: 0x00FF00 }));
+        scene.add(collisionline);
+        //currentIntersected.material.linewidth = 15;
+        currentIntersected.material.color = new THREE.Color(0,0,0);
+        sphereInter.visible = true;
+        sphereInter.position.copy(intersects[0].point);
+    } else {
+        if (currentIntersected !== undefined) {
+            currentIntersected.material.color = new THREE.Color(0, 0, 0);
+            //currentIntersected.material.linewidth = 1;
+        }
+        currentIntersected = undefined;
+        sphereInter.visible = false;
+    }
+
 
 
     renderer.render(scene, camera);
